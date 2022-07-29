@@ -1,15 +1,14 @@
-let button = document.getElementById('button');
-let button1 = document.getElementById('button1');
-let button2 = document.getElementById('button2');
-
-function somaNumeros(numero1, numero2) {
-	if (typeof numero1 === 'number' && typeof numero2 === 'number') {
-		return numero1 + numero2;
-	} else {
-		return Number(numero1) + Number(numero2);
-	}
+"use strict";
+var button = document.getElementById('button');
+var input1 = document.getElementById('input1');
+var input2 = document.getElementById('input2');
+function adicionarNumeros(numero1, numero2) {
+    return numero1 + numero2;
 }
-
-button.addEventListener('click', () => {
-	console.log(somaNumeros(input1.value, input2.value));
-})
+if (button) {
+    button.addEventListener('click', function () {
+        if (input1 && input2) {
+            console.log(adicionarNumeros(Number(input1.value), Number(input2.value)));
+        }
+    });
+}
