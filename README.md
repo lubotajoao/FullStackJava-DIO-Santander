@@ -44,10 +44,9 @@
 ***Desafio de Projeto***
 **Introdução Prática ao TypeScript**
 
-
-
-
 ### Módulo III - Angular
+
+- Introdução ao Angular (8)
 
 ### Módulo IV - Java
 
