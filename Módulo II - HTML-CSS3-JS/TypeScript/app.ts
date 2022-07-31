@@ -1,24 +1,56 @@
-let button = document.getElementById('button');
-let input1 = document.getElementById('input1') as HTMLInputElement;
-let input2 = document.getElementById('input2') as HTMLInputElement;
+const pessoa = {
+	nome: 'Mariana',
+	idade: 23,
+	profissao: 'desenvolvedora'
+}
 
-function adicionarNumeros(numero1: number, numero2: number, devePrintar: boolean, frase: string) {
-	let resultado = numero1 + numero2;
+pessoa.idade = 38;
 
-	if (devePrintar) {
-		console.log(frase + resultado);
+const andre: { nome: string, idade: number, profissao: string } = {
+	nome: 'Paula',
+	idade: 23,
+	profissao: 'Desenvolvedor'
+}
+
+enum Profissao {
+	Professora,
+	Atriz,
+	Desenvolvedora,
+	Cantor
+}
+
+interface Pessoa {
+	nome: string,
+	idade: number,
+	profissao?: Profissao
+}
+
+interface Estudante extends Pessoa {
+	materias: string[]
+}
+
+const vanessa: Pessoa = {
+	nome: 'Vanessa',
+	idade: 23,
+	profissao: Profissao.Atriz
+}
+
+const veronica: Pessoa = {
+	nome: 'Veronica',
+	idade: 23,
+	profissao: Profissao.Desenvolvedora
+}
+
+const monica: Estudante = {
+	nome: 'Monica',
+	idade: 23,
+	materias: ['Geografia', 'Matematica', 'Historia']
+}
+
+function listar(lista: string[]) {
+	for (const item of lista) {
+		console.log('-', item)
 	}
-
-	return resultado;
 }
 
-let devePrintar = true;
-let frase = 'O valor é: ';
-
-if (button) {
-	button.addEventListener('click', () => {
-		if (input1 && input2) {
-			console.log(adicionarNumeros(Number(input1.value), Number(input2.value), devePrintar, frase));
-		}
-	})
-}
+listar(monica.materias);
